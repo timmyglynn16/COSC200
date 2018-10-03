@@ -1,0 +1,357 @@
+#Part 1
+
+#!/bin/bash
+
+for f in *.c++; 
+do
+mv -- "$f" "${f%.c++}.cpp"
+done
+
+#INPUT/OUTPUT
+sp17glynn@ch444d12:~$ cd Exam1Stuff
+sp17glynn@ch444d12:~/Exam1Stuff$ ls
+glynnExam1.sh  test2.c++  test3.c++  test4.c++  test.c++
+sp17glynn@ch444d12:~/Exam1Stuff$ chmod +x glynnExam1.sh
+sp17glynn@ch444d12:~/Exam1Stuff$ ./glynnExam1.sh
+sp17glynn@ch444d12:~/Exam1Stuff$ ls
+glynnExam1.sh  test2.cpp  test3.cpp  test4.cpp  test.cpp
+sp17glynn@ch444d12:~/Exam1Stuff$
+
+
+#Part 2
+
+#!/bin/bash
+
+echo "Enter your filename:"
+read filename
+#grep -w '..' $filename
+#awk '{f=0;for (i=1;i<=NF;i++) if (length($i)==2) f=1}f' $filename
+grep -o -w "\w\{2\}" $filename | sort | uniq -c
+
+
+#INPUT/OUTPUT
+sp17glynn@ch444d12:~/Exam1Stuff$ ./glynnExam1.sh
+./glynnExam1.sh: line 7: $':\nfor f in *.c++; do \nmv -- "$f" "${f%.c++}.cpp"\ndone ': command not found
+Pls enter your filename:
+mobydick.txt
+  	4 10
+  	1 11
+  	1 12
+  	3 13
+  	1 14
+  	1 15
+  	1 16
+  	1 17
+  	1 18
+  	1 19
+  	3 20
+  	1 21
+  	1 22
+  	1 23
+  	2 24
+  	2 25
+  	1 26
+  	1 27
+  	1 28
+  	1 29
+  	2 30
+  	1 31
+  	1 32
+  	1 33
+  	1 34
+  	1 35
+  	1 36
+  	1 37
+  	1 38
+  	1 39
+  	1 3d
+  	1 3D
+  	2 40
+  	1 41
+  	1 42
+  	1 43
+  	1 44
+  	2 45
+  	1 46
+  	1 47
+  	1 48
+  	1 49
+  	1 50
+  	1 51
+  	1 52
+  	1 53
+  	1 54
+  	1 55
+  	1 56
+  	1 57
+  	1 58
+  	1 59
+  	2 60
+  	1 61
+  	1 62
+  	1 63
+  	1 64
+  	1 65
+  	1 66
+  	1 67
+  	1 68
+  	1 69
+  	1 70
+  	1 71
+  	2 72
+  	1 73
+  	1 74
+  	1 75
+  	1 76
+  	1 77
+  	1 78
+  	1 79
+  	1 80
+  	1 81
+  	1 82
+  	1 83
+  	1 84
+  	1 85
+  	1 86
+  	1 87
+  	1 88
+  	2 89
+  	2 90
+  	1 91
+  	1 92
+  	1 93
+  	1 94
+  	1 95
+  	1 96
+  	1 97
+  	1 98
+  	1 99
+  	5 ah
+ 	18 Ah
+ 	86 am
+  	3 Am
+  	2 AM
+	582 an
+ 	14 An
+   1620 as
+	120 As
+  	1 AS
+   1232 at
+ 	84 At
+  	4 AT
+  	1 ay
+  	3 Ay
+   1030 be
+ 	14 Be
+  	1 BE
+  	2 bo
+   1136 by
+ 	53 By
+ 	15 BY
+  	1 co
+  	1 da
+ 	34 de
+  	4 De
+	267 do
+ 	32 Do
+  	8 DO
+  	6 Dr
+  	3 ee
+ 	18 eh
+  	1 Eh
+ 	42 em
+  	3 en
+  	7 er
+  	1 et
+  	1 Et
+  	1 ex
+  	1 Ex
+  	3 EX
+  	1 fa
+  	1 Fa
+  	1 Fe
+  	1 ge
+	182 go
+  	9 Go
+  	3 GO
+ 	17 ha
+ 	21 Ha
+   1661 he
+	230 He
+  	5 HE
+  	8 ho
+ 	22 Ho
+  	2 HO
+	421 if
+ 	60 If
+ 	15 II
+   3917 in
+	238 In
+ 	19 IN
+  	2 Io
+   1695 is
+ 	27 Is
+  	3 IS
+   2208 it
+	310 It
+  	3 IT
+  	4 IV
+  	1 Ka
+  	1 L1
+  	7 la
+  	2 La
+  	1 le
+	113 ll
+  	2 LL
+ 	15 lo
+  	3 Lo
+  	1 lt
+  	2 ma
+	627 me
+  	2 Me
+  	4 ME
+ 	63 Mr
+  	1 Mt
+	564 my
+ 	22 My
+  	3 MY
+  	3 ne
+	484 no
+ 	98 No
+  	4 NO
+  	1 nt
+  	3 ob
+   6541 of
+ 	24 Of
+ 	49 OF
+ 	36 oh
+	119 Oh
+  	1 OH
+   1005 on
+ 	46 On
+ 	11 ON
+	697 or
+ 	11 Or
+  	6 OR
+  	1 os
+  	6 ox
+ 	16 re
+  	1 se
+  	1 si
+	918 so
+	147 So
+ 	35 st
+ 	24 St
+  	1 ST
+  	1 Sw
+  	1 te
+   4543 to
+ 	62 To
+ 	21 TO
+  	1 tu
+  	7 um
+  	5 Um
+	505 up
+ 	15 Up
+  	1 UP
+	228 us
+ 	37 ve
+  	2 VI
+  	1 Wa
+	414 we
+ 	47 We
+	461 ye
+ 	10 Ye
+  	2 YE
+sp17glynn@ch444d12:~/Exam1Stuff$
+
+#Part 3
+
+#!/bin/bash
+
+echo "Enter your filename:"
+read filename
+
+if   [ -d "${filename}" ]
+then echo "${filename} is a directory";
+ls
+elif [ -f "${filename}" ]
+then echo "${filename} is a file";
+more ${filename}
+else echo "${filename} is not valid";
+ 	exit 1
+fi
+
+#INPUT/OUTPUT
+sp17glynn@ch444d12:~/Exam1Stuff$ ./glynnExam1.sh
+Enter your filename:
+TestDir
+TestDir is a directory
+glynnExam1.sh  tempexam1.txt  Test2Dir     test4.cpp  TestDir
+mobydick.txt   test2.cpp  	test3.cpp  test.cpp
+sp17glynn@ch444d12:~/Exam1Stuff$ ./glynnExam1.sh
+Enter your filename:
+test.cpp
+test.cpp is a file
+test 1
+sp17glynn@ch444d12:~/Exam1Stuff$ ./glynnExam1.sh
+Enter your filename:
+notafile.whatever
+notafile.whatever is not valid
+sp17glynn@ch444d12:~/Exam1Stuff$ ./glynnExam1.sh
+Enter your filename:
+mobydick.txt
+mobydick.txt is a file
+MOBY DICK; OR THE WHALE
+
+By Herman Melville
+
+
+
+
+Original Transcriber's Notes:
+
+This text is a combination of etexts, one from the now-defunct ERIS
+project at Virginia Tech and one from Project Gutenberg's archives. The
+proofreaders of this version are indebted to The University of Adelaide
+Library for preserving the Virginia Tech version. The resulting etext
+was compared with a public domain hard copy version of the text.
+
+In chapters 24, 89, and 90, we substituted a capital L for the symbol
+for the British pound, a unit of currency.
+
+
+
+
+ETYMOLOGY.
+
+--More--(0%)
+
+
+#Part 4
+
+#!/bin/bash
+
+for mun in `seq 60000 63000`
+do
+echo $mun
+
+done
+
+#INPUT/OUTPUT
+PRINTS ALL NUMBERS
+COULDNT FORMAT IT CORRECTLY
+
+#Part 5 - NOT FINISHED!
+#!/bin/bash
+
+x = $(find . -type f -size +100k | head -1)
+for i in $x; do
+	process "$i"
+
+done
+
+#x = $(find . -type f -size +100k | head -1)
+#echo $x
+echo "do you want to delete the file?"
+read DelAns
